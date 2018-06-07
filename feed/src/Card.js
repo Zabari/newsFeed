@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Card extends Component {
   constructor(props){
     super(props);
-    let timeIn=Date.now();
+    //let timeIn=Date.now();
     this.state={
       name:this.props.name,
       proPic:this.props.proPic,
@@ -12,11 +12,23 @@ class Card extends Component {
       text:this.props.text,
       liked:0,
       hidden:0,
-      time:timeIn,
+      time:this.props.time,
       comments:[],
       userName: this.props.userName,
       tempComment:""
     };
+    // this.state={
+    //   name:name,
+    //   proPic:proPic,
+    //   pic:img,
+    //   text:text,
+    //   liked:0,
+    //   hidden:0,
+    //   time:timeIn,
+    //   comments:[],
+    //   userName: "",
+    //   tempComment:""
+    // };
     this.hidePost=this.hidePost.bind(this);
     this.handleLiked=this.handleLiked.bind(this);
     this.handleChange=this.handleChange.bind(this);
@@ -24,6 +36,11 @@ class Card extends Component {
     this.renderLiked=this.renderLiked.bind(this);
     this.renderHidden=this.renderHidden.bind(this);
     this.addComment=this.addComment.bind(this);
+    this.getDate=this.getDate.bind(this);
+    this.addUserName=this.addUserName.bind(this);
+  }
+  addUserName(name){
+    this.setState({userName:name});
   }
   addComment(nameIn,textIn){
     let newComment=this.state.comments;
@@ -35,6 +52,9 @@ class Card extends Component {
     let isLiked=!this.state.liked;
     this.setState({liked:isLiked});
     //console.log(isLiked)
+  }
+  getDate(){
+    return this.state.time;
   }
   hidePost(){
     let isHidden=!this.state.hidden;
@@ -84,7 +104,7 @@ class Card extends Component {
     }
     return (
       <div>
-      <h1> Welcome to our site {this.state.userName}!</h1>
+
         <button className="hideButton" onClick={this.hidePost}>Hide</button>
         <p className="profile">{this.state.proPic}</p>
         <p className="name">{this.state.name}</p>
