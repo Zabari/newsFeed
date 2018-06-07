@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import dog1 from './dog.jpg'
 import dog2 from './dog1.jpeg'
+import cat1 from './cat1.jpg'
 import Card from './Card.js';
 
 class App extends Component {
@@ -32,9 +33,12 @@ class App extends Component {
     const c1={card:(<Card name="Aaron" pic={dog1} text="Hey it's me Aaron! Look at this sick pic of my dog!" userName={this.state.tempName} time={x} />),time:x};
     x=2;
     const c2={card:(<Card name="Greg" pic={dog2} text="Hey everyone, wonderful day outside. Here's a photograph of my dog." userName={this.state.tempName} time={x} />),time:x};
+    x=3
+    const c3={card:(<Card name="Sasha" pic={cat1} text="Hey everyone, looks like rain." userName={this.state.tempName} time={x} />),time:x};
 
     let newCards=[];
     newCards.push(c2);
+    newCards.push(c3);
     newCards.push(c1);
     //console.log(newCards);
     this.setState({cards:newCards});
@@ -102,7 +106,7 @@ class App extends Component {
     return (
       <div className="App">
       <h1 className="header"> Welcome to our site {this.state.name}!</h1>
-      <button onClick={this.handleSorted}>Sort</button>
+      <button onClick={this.handleSorted}>{this.state.sorted? ( <b>Sorted</b> ): ( <b>Sort</b> ) }</button>
       <ul>
       {this.state.sorted? this.sortRender():newArr }
       </ul>

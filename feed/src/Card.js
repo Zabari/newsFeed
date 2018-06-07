@@ -105,10 +105,10 @@ class Card extends Component {
     }
     return (
       <div className="Card">
-        {console.log(this.state.proPic)}
+        <p className="timestamp"> Posted {this.state.time} day(s) ago.</p>
         <button className="hideButton" onClick={this.hidePost}>Hide</button>
-        <img className="profile" src={this.state.proPic} alt="Profile"></img>
         <p className="name">{this.state.name}</p>
+        <img className="profile" src={this.state.proPic} alt="Profile"></img>
         <p className="post">{this.state.text}</p>
         {this.renderLiked()}
         {this.renderComments()}
