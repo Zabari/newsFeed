@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import dog1 from './dog.jpg'
+import dog2 from './dog1.jpeg'
 import Card from './Card.js';
 
 class App extends Component {
@@ -27,9 +29,9 @@ class App extends Component {
   handleSubmit(event){
     event.preventDefault();
     let x=1;
-    const c1={card:(<Card name="Aaron" pic="/thisfile.img" text="Hi it's me!" userName={this.state.tempName} time={x} />),time:x};
+    const c1={card:(<Card name="Aaron" pic={dog1} text="Hey it's me Aaron! Look at this sick pic of my dog!" userName={this.state.tempName} time={x} />),time:x};
     x=2;
-    const c2={card:(<Card name="Greg" pic="/otherfile.img" text="Hi it's me too!" userName={this.state.tempName} time={x} />),time:x};
+    const c2={card:(<Card name="Greg" pic={dog2} text="Hey everyone, wonderful day outside. Here's a photograph of my dog." userName={this.state.tempName} time={x} />),time:x};
 
     let newCards=[];
     newCards.push(c2);
@@ -41,7 +43,7 @@ class App extends Component {
   }
   renderNoName(){
     return (
-      <div>
+      <div className="login">
       Please enter your name:
       <form onSubmit={this.handleSubmit}>
       <input onChange={this.handleChange} type="text"/>
@@ -99,7 +101,7 @@ class App extends Component {
     let newArr=this.state.cards.map((item,i)=> <li key={i}> {item.card}</li>);
     return (
       <div className="App">
-      <h1> Welcome to our site {this.state.name}!</h1>
+      <h1 className="header"> Welcome to our site {this.state.name}!</h1>
       <button onClick={this.handleSorted}>Sort</button>
       <ul>
       {this.state.sorted? this.sortRender():newArr }

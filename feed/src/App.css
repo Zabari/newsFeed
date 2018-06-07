@@ -26,3 +26,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.header {
+
+  background-color: cornflowerblue;
+  color: cornsilk;
+
+}
+
+.login {
+  text-align: center;
+  font-size: 35px;
+}

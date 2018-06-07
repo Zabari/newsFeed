@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-
+import './Card.css';
 
 class Card extends Component {
   constructor(props){
     super(props);
     //let timeIn=Date.now();
+    console.log(this.props);
     this.state={
       name:this.props.name,
-      proPic:this.props.proPic,
+      proPic:this.props.pic,
       pic:this.props.pic,
       text:this.props.text,
       liked:0,
@@ -73,7 +74,7 @@ class Card extends Component {
       );
     }
     return (
-      <button className="likeButton" onClick={this.handleLiked}>Like</button>
+      <button className="likeButton" onClick={this.handleLiked}>Like?</button>
     );
   }
   renderComments(){
@@ -103,15 +104,15 @@ class Card extends Component {
       return this.renderHidden();
     }
     return (
-      <div>
-
+      <div className="Card">
+        {console.log(this.state.proPic)}
         <button className="hideButton" onClick={this.hidePost}>Hide</button>
-        <p className="profile">{this.state.proPic}</p>
+        <img className="profile" src={this.state.proPic} alt="Profile"></img>
         <p className="name">{this.state.name}</p>
         <p className="post">{this.state.text}</p>
         {this.renderLiked()}
         {this.renderComments()}
-        <form onSubmit={this.handleSubmit}>
+        <form className="commentForm" onSubmit={this.handleSubmit}>
         <label>
         Type your comment and press enter:
         </label>

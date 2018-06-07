@@ -1,0 +1,63 @@
+.Card {
+    border: solidblack 20px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: cornflowerblue;
+}
+
+.profile{
+    align-content: flex-start;
+    margin: 5px;
+    height: 250px;
+    width: 200px;
+}
+
+.name{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    background-color: cornsilk;
+    width: 200px;
+    align-self: center;
+
+}
+
+.post{
+    background-color: whitesmoke;
+    height: 100px;
+    text-align: left;
+
+}
+
+.commentForm{
+    background-color: whitesmoke;
+    font-family: monospace;
+    margin: 10px;
+
+}
+
+.hideButton {
+    border: 5px;
+    border-inline-start-color: cornsilk;
+    border-inline-end-color: black;
+}
+
+.unhideButton {
+    border: 5px;
+    border-inline-start-color: cornsilk;
+    border-inline-end-color: black;
+}
+
+.likeButton {
+    border: 5px;
+    border-inline-start-color: cornsilk;
+    border-inline-end-color: black;
+}
+
+.likedButton {
+    border: 5px;
+    background-color: khaki;
+    border-inline-start-color: cornsilk;
+    border-inline-end-color: black;
+
+}
