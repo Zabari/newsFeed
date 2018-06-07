@@ -30,9 +30,9 @@ class App extends Component {
   handleSubmit(event){
     event.preventDefault();
     let x=1;
-    const c1={card:(<Card name="Aaron" pic={dog1} text="Hey it's me Aaron! Look at this sick pic of my dog!" userName={this.state.tempName} time={x} />),time:x};
+    const c1={card:(<Card name="Aaron" pic={dog1} text="Let's go Cavs! What a shot by Lebron James!!!" userName={this.state.tempName} time={x} />),time:x};
     x=2;
-    const c2={card:(<Card name="Greg" pic={dog2} text="Hey everyone, wonderful day outside. Here's a photograph of my dog." userName={this.state.tempName} time={x} />),time:x};
+    const c2={card:(<Card name="Greg" pic={dog2} text="Super hungry...could really go for a burger right now..." userName={this.state.tempName} time={x} />),time:x};
     x=3
     const c3={card:(<Card name="Sasha" pic={cat1} text="Hey everyone, looks like rain." userName={this.state.tempName} time={x} />),time:x};
 
